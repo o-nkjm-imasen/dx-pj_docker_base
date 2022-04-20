@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  web:
+    container_name: react-redux-base-01
+    build: ./conf/react
+    ports:
+      - ${PORT}:3000
+    volumes:
+      - ./web:/usr/src/app
+      - node_modules_volume:/usr/src/app/node_modules
+    command: sh -c "yarn install && yarn start"
+    tty: true
+volumes:
+  node_modules_volume:

@@ -1,0 +1,17 @@
+
+#Ignore all mysql data files
+rails_baes_01/var
+rails_baes_02/var
+mariadb_base_01/var/vm/**
+
+#Ignore web app 
+rails_baes_01/web
+rails_baes_02/web
+
+#Ignore .env file
+ruby_base_01/.env
+react_readux_base_01/.env
+react_base_01/.env
+rails_baes_01/.env
+rails_baes_02/.env
+mariadb_base_01/.env
