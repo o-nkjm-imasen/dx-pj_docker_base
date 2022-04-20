@@ -1,2 +1,2 @@
 hello:
-	sudo docker-compose run app ruby hello.rb
+	sudo docker compose run app ruby hello.rb
