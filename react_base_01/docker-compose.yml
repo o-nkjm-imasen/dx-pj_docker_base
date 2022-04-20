@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  web:
+    container_name: react_base
+    build: ./conf/react
+    ports:
+      - ${PORT}:3000
+    volumes:
+      - ./src:/usr/src/app
+    # command: sh -c "cd react-sample && yarn install && yarn start"
+    tty: true

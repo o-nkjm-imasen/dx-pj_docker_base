@@ -1,0 +1,80 @@
+html{
+    margin: 0px;
+    padding: 0px;
+  }
+  
+  body{
+    margin: 0px;
+    padding: 0px;
+  }
+  
+  .login {
+    background-color: #d9f8fa;
+    background-image: url("../img/login/bg-03.png"), url("../img/login/bg-04.png");
+    background-size: 600px, 600px;
+    background-position: left bottom, right bottom;
+    background-repeat: no-repeat, no-repeat;
+    background-attachment: fixed;
+    /* background-color: #EBEFF2; */
+  }
+  
+  .container-login {
+    /* margin: 50vh auto 0;
+    transform: translateY(-50%); */
+    display: flex;
+    height: 100vh;
+  
+    box-sizing: border-box;
+    justify-content: center;
+    align-items: center;
+  
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  
+  .login-title {
+    padding: 0px;/*ボックス内側の余白*/
+    /* background-color: red; */
+  } 
+  
+  .login-box {
+    padding: 0px;/*ボックス内側の余白*/
+    border: 1px solid #333333;/*線の種類 点線*/
+    border-radius: 10px;
+    display: flex;
+  }
+  
+  .login-box-left {
+    padding: 10px;/*ボックス内側の余白*/
+    border: 3px dotted #333333;/*線の種類 点線*/
+    display: flex;
+  }
+  
+  .login-box-right {
+    padding: 10px;/*ボックス内側の余白*/
+    /* border: 1px solid #eee;/*線の種類 点線*/
+  }
+  
+  .login-box-right1 {
+    padding: 10px;/*ボックス内側の余白*/
+    /* border: 3px dotted #eee;/*線の種類 点線*/
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+  }
+  
+  .login-box-right2 {
+    padding: 10px;/*ボックス内側の余白*/
+    /* border: 3px dotted #333333;/*線の種類 点線*/
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+  }
+  
+  .login-box-right3 {
+    padding: 10px;/*ボックス内側の余白*/
+    /* border: 3px dotted #333333;/*線の種類 点線*/  
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+  }

@@ -1,0 +1,40 @@
+# simple Rails app with MariaDB
+
+* web rails7 
+* db mariadb 
+
+* ruby 3.0.2
+* rails 7.0
+
+# install/initial config
+
+* 0. clone this docker config source and modify network port and image name if you needed
+  - ruby version   on conf/web/Dockerfile
+  - rails version  on conf/web/Gemfile
+  - change dotenv file for web and db port
+  - container_name on docker-compose.yml
+  - image_name on docker-compose.yml  
+* 1.create Rails apps
+  - docker-compose run web rails new . --force --database=mysql --skip-bundle
+  - docker-compose run web rails new . --force --database=mysql --skip-bundle --api  
+    - if mysql2 error is occured
+    - docker-compose run web bundle install
+* 2.change web folder permission (e.g. user and group is densanka)
+  - chown -R densanka web
+  - chgrp -R densanka web
+* 3.change dotenv
+  - ROOT_PASS
+  - USER_NAME
+  - USER_PASS
+- host: db_main # docker-compose.yml  service name
+* 4.create database
+  - docker-compose run web rails db:create			
+* 5.build 
+  - docker-compose build			
+* 6.start container
+  - sudo docker-compose up -d
+
+# for development
+  - just run by docker-compoes run web ... 
+  - sudo docker-compose run web rails g scaffold hoge name:string
+  

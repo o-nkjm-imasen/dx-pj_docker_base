@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+  web:
+    build: ./conf/web
+    image: rails_base_web
+    container_name: rails_base_web
+    # tty: true # https://qiita.com/sekitaka_1214/items/2af73d5dc56c6af8a167
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    volumes:
+      - ./web:/myapp
+      - bundle:/usr/local/bundle
+    ports:
+      - ${WEB_PORT}:3000
+
+  db:
+    image: mariadb:${MARIADB_VERSION}
+    container_name: rails_base_db
+    volumes:
+      - ./conf/db/my.cnf:/etc/mysql/conf.d/my.cnf
+      - ./var/vm/mariadb_main:/var/lib/mysql
+      - ./conf/db/setup.sh:/docker-entrypoint-initdb.d/setup.sh
+    ports:
+      - ${DB_PORT}:3306
+    environment:
+      - TZ=Asia/Tokyo
+      - LANG=ja_JP.UTF-8
+      - MYSQL_ROOT_PASSWORD=${DB_ROOT_PASSWORD}
+      - MYSQL_USER=${DB_USER}
+      - MYSQL_PASSWORD=${DB_PASSWORD}
+      - BIND-ADDRESS=0.0.0.0
+volumes:
+   bundle:
