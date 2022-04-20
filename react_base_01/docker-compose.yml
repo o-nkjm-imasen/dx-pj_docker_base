@@ -8,5 +8,5 @@ services:
       - ${PORT}:3000
     volumes:
       - ./src:/usr/src/app
-    # command: sh -c "cd react-sample && yarn install && yarn start"
+    command: sh -c "cd ${APP} && yarn install && yarn start"
     tty: true
